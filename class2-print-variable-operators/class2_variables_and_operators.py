@@ -65,21 +65,28 @@
 
 # Dictionaries
 # dictionaries use {} syntax 
-# demographic_info = {"First name" : "Joe",
-#                     "Last name" : "Smith",
-#                     "State": "NY"}
-# demographic_dynamic_version: {
-#                     "First name": "first_name", 
-#                     "Second name": "last_name",
-#                     "State": "state" 
-# }
+demographic_info = {"First name" : "Joe",
+                    "Last name" : "Smith",
+                    "State": "NY"}
+
+'''
+demographic_dynamic_version: {
+                    "First name": "first_name", 
+                    "Second name": "last_name",
+                    "State": "state" 
+}
+
+'''
 
 # print(demographic_info)
 # print(type(demographic_info))
 
-## Data Type Casting 
-## From String -> Int number 
-## when you get input from a user, python will make it into a string
+'''
+Data Type Casting 
+    From String -> Int number 
+    when you get input from a user, python will make it into a string
+'''
+
 my_string = "5"
 print(type(my_string))
 
@@ -91,5 +98,11 @@ number = 10
 stringAsNumber = str(number)
 print(stringAsNumber)
 
-#Color
+#Colors
 
+fav_colors = ["red","blue","orange","yellow"]
+print(fav_colors)
+colors_length = len(fav_colors)
+print(colors_length)
+new_color = "purple"
+print(len(new_color))
