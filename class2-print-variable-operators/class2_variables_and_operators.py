@@ -38,26 +38,58 @@
 # print(num_two)
 
 # print(num_two + num_one)
-length = 10
-width = 7
-perimeter = 2*(length + width) 
-print(perimeter)
+# length = 10
+# width = 7
+# perimeter = 2*(length + width) 
+# print(perimeter)
 
 
 ## Identify the data type
-fav_color = "blue"
-technical_errors= True
-num_4 =4.05
-print(type(fav_color))
-print(type(num_4))
+# fav_color = "blue"
+# technical_errors= True
+# num_4 =4.05
+# print(type(fav_color))
+# print(type(num_4))
 
 # Lists and looping
-student_grades = [100, 95, 70,85, 40]
-new_grade = 35
+# lists use [] syntax
+# student_grades = [100, 95, 70,85, 40]
+# new_grade = 35
 
-#similar to a foreach loop for(Datatype student : student_grades)
-for student in student_grades: 
-    print("One grade is: ", student)
+# #similar to a foreach loop for(Datatype student : student_grades)
+# for student in student_grades: 
+#     print("One grade is: ", student)
 
-student_grades.append(new_grade)
-student_grades.remove(new_grade)
+# student_grades.append(new_grade)
+# student_grades.remove(new_grade)
+
+# Dictionaries
+# dictionaries use {} syntax 
+# demographic_info = {"First name" : "Joe",
+#                     "Last name" : "Smith",
+#                     "State": "NY"}
+# demographic_dynamic_version: {
+#                     "First name": "first_name", 
+#                     "Second name": "last_name",
+#                     "State": "state" 
+# }
+
+# print(demographic_info)
+# print(type(demographic_info))
+
+## Data Type Casting 
+## From String -> Int number 
+## when you get input from a user, python will make it into a string
+my_string = "5"
+print(type(my_string))
+
+new_number = int(my_string)
+print(type(new_number))
+
+## Cast an integer to a String
+number = 10
+stringAsNumber = str(number)
+print(stringAsNumber)
+
+#Color
+
