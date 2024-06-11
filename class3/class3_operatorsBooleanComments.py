@@ -107,27 +107,27 @@ print(7>5)
 # Is 4 less than or equal to 4
 print(4 <= 3)
 result = 4 <= 3
-print("Is 4 greater than 3?", result)
+# print("Is 4 greater than 3?", result)
 
 # Is 6 greater than or equal to 2?
 print(6>=2)
 result = 6>=2
-print("Is 6 greater than or equal to 2?", result)
+# print("Is 6 greater than or equal to 2?", result)
 
 #Is 5 greater than or equal to 6? >=
 print(5>=6)
 result = 5>=6
-print("Is 5 greater than 6?" , result)
+# print("Is 5 greater than 6?" , result)
 
 #Is 5 equal to 5? ==
 print (5==5)
 result = 5==5
-print("Is 5 equal to 5?", result)
+# print("Is 5 equal to 5?", result)
 
 #Is 100 not equal to 75? !=
 print(100 != 75)
 result = 100 != 75
-print("Is 100 not equal to 75?", result)
+# print("Is 100 not equal to 75?", result)
 
 # AND && 
 # print (5 ==5 and 4 == 4) # True
@@ -136,10 +136,24 @@ print("Is 100 not equal to 75?", result)
 
 log_1 = (5==3)
 log_2 = (4==7)
-print("Log 1 " , log_1)
+# print("Log 1 " , log_1)
 print("Log 2", log_2)
 
 ## OR 
 print(5==5 or 5 ==3) #True if at least 1 is true 
+
+# not
+is_it_autumn = True
+print(not is_it_autumn)
+
+# IS 
+fname = "Taylor"
+first_name = "Taylor"
+print(fname is first_name)
+print(fname == first_name)
+
+# IN 
+print("J" in "January")
+print("F" in "March")
 
 ## ASSIGNMENT 
