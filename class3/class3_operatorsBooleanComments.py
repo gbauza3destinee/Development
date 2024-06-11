@@ -63,22 +63,83 @@ fees /= 7
 #Raise to the 3rd power
 num_three = 6
 num_three **=3
-print(num_three)
+# print(num_three)
 
 #Raise to the 2nd power **
 data = 16 
 data **=2
-print(data)
+# print(data)
 
 #Integer division, how many times does 3 go into 16?
 val_one = 16
 val_one //=3
-print(val_one)
+# print(val_one)
 
 ## Integer divde by 4 //
 val_two = 9 
 val_two //= 4
-print(val_two)
+# print(val_two)
 
 # Modulus we use often to find if a value is odd or even
+#Find the remainder if divided by 3 
+val_three = 10
+val_three %=3
+# print(val_three)
 
+#find the remainder if divided by 5 %
+val_four = 14
+val_four %=5
+# print(val_four)
+
+#Refactor  me with shortcut operators
+fahrenheit = 89
+celsius = (fahrenheit - 32) * 5/9
+# print(celsius)
+
+fahrenheit -= 32 #parentheses
+fahrenheit *= 5/9
+celsius = fahrenheit
+# print(celsius)
+
+# boolean
+print(7>5)
+
+# Is 4 less than or equal to 4
+print(4 <= 3)
+result = 4 <= 3
+print("Is 4 greater than 3?", result)
+
+# Is 6 greater than or equal to 2?
+print(6>=2)
+result = 6>=2
+print("Is 6 greater than or equal to 2?", result)
+
+#Is 5 greater than or equal to 6? >=
+print(5>=6)
+result = 5>=6
+print("Is 5 greater than 6?" , result)
+
+#Is 5 equal to 5? ==
+print (5==5)
+result = 5==5
+print("Is 5 equal to 5?", result)
+
+#Is 100 not equal to 75? !=
+print(100 != 75)
+result = 100 != 75
+print("Is 100 not equal to 75?", result)
+
+# AND && 
+# print (5 ==5 and 4 == 4) # True
+# print(2==2 and 3 ==1) #False
+# print(1==2 and 2 ==10) #False
+
+log_1 = (5==3)
+log_2 = (4==7)
+print("Log 1 " , log_1)
+print("Log 2", log_2)
+
+## OR 
+print(5==5 or 5 ==3) #True if at least 1 is true 
+
+## ASSIGNMENT 
