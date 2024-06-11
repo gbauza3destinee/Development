@@ -156,4 +156,6 @@ print(fname == first_name)
 print("J" in "January")
 print("F" in "March")
 
-## ASSIGNMENT 
+## Formatted String 
+pet = "dog"
+print(f"I own a {pet}")

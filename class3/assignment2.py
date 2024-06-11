@@ -9,6 +9,7 @@ Requirements
 - Comment your code 
 - Use proper naming for your variables
 - Include a String within your print builtin function that says
-"The area of your triangle is " as output
+"The area of your triangle is " as output (formatted string)
 
+print(f"ENTRYGOESHERE{variable}")
 """
