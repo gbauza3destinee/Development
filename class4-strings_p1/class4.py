@@ -73,37 +73,38 @@ for char in giraffe :
     if char == "a":
         print ("True")
 
-print("z" in "birthday")
+# print("z" in "birthday")
 
-print("w" in "wrapper")
+# print("w" in "wrapper")
 
 
     
 
 
 
-'''
-Using the len function find the number of characters in the following strings
 
-Pardon
-Halloween
-Ice Cream
-Tank
-Laptop
-'''
+    ## Using the len function find the number of characters in the following strings
+
+    ## Pardon
+    ## Halloween
+    ## Ice Cream
+    ##Tank
+    ## Laptop
+
+
 
 pardon = "pardon"
-print(len(pardon))
+# print(len(pardon))
 
 halloween = "halloween"
-print(len(halloween))
+# print(len(halloween))
 
 iceCream = "ice cream"
-print(iceCream)
+# print(iceCream)
 
-print("tank")
+# print("tank")
 
-print("laptop")
+# print("laptop")
 
 
 ''' Let's try some string methods '''
@@ -125,7 +126,7 @@ name_two = 'SimON'
 
 
 # center() Returns a centered string
-print('hello'.center(100))
+# print('hello'.center(100))
 
 
 # count() Returns the number of times a specified value occurs in a string
@@ -137,7 +138,7 @@ letter_count = my_string.count("a")
 # start end parameter
 
 range_count = my_string.count("a", 0, 2)
-print(range_count)
+# print(range_count)
 
 # expandtabs() Sets the tab size of the string
 
@@ -153,15 +154,15 @@ movie = 'Lord of The Rings'
 
 # Find position of e in day
 posOfE = day.find("e")
-print(f"Letter e exists in the {posOfE} position of Tuesday")
+# print(f"Letter e exists in the {posOfE} position of Tuesday")
 
 # Find position of J in month
 posOfJ = month.find("j")
-print(f"Letter j exists in the {posOfJ} position of June")
+# print(f"Letter j exists in the {posOfJ} position of June")
 
 # Find the position of R in movie
 posOfR = movie.find("r")
-print(f"Letter r exists in the{posOfR} position of Movie")
+# print(f"Letter r exists in the{posOfR} position of Movie")
 
 # Note: Find returns -1 if the character is not in the string
 
@@ -193,7 +194,7 @@ word_two = 'hello'
 word_three = 'abc123'
 
 
-print(word_one.isalnum())
+# print(word_one.isalnum())
 
 # isalpha() Returns True if all characters in the string are in the alphabet (Letters only)
 word_four = 'abc123'
@@ -268,11 +269,11 @@ car = 'truck'
 season = 'SUMMERTIME'
 
 animal_is_lower = animal.isLower()
-print(f"Is animal lower? {animal_is_lower}")
+# print(f"Is animal lower? {animal_is_lower}")
 car_higher = car.isUpper()
-print(f"Is car upper?{car_higher}")
+# print(f"Is car upper?{car_higher}")
 season_lower = season.isLower()
-print(f"Is summertime lowercase? {season_lower}")
+# print(f"Is summertime lowercase? {season_lower}")
 
 
 # isupper() Returns True if all characters in the string are upper case
@@ -318,7 +319,7 @@ song_three = 'Sing for the moment'
 # join() Joins the elements of an iterable to the end of the string
 my_colors = ['blue', 'yellow', 'red']
 result = "*".join(my_colors)
-print(result)
+# print(result)
 
 
 # lower() Converts a string into lower case
@@ -368,16 +369,18 @@ str2 = "HELLO".lower()
 
 print("What is your name?")
 first_name = input()
-print(f"You typed in {first_name}")
+# print(f"You typed in {first_name}")
 
 # Let's shorten our code
 
 first_name = input("What is your name")
-print(f"You typed in {first_name}")
+# print(f"You typed in {first_name}")
 
 
 # Let's sanitize our string!
-
+first_name = input("What's your name?")
+length_of_name = len(first_name)
+# print(f"Hello {first_name}. I am counting {length_of_name} spaces")
 
 
 
@@ -392,6 +395,14 @@ False
 
 4
 True
+
+CODE: 
+user_input = input("Enter")
+user_input = user_input.strip()
+result = user_input.isDigit()
+print(result)
+
+
 
 
 '''
@@ -414,6 +425,11 @@ Hint: use len() to find the length of the string, and don’t forget to cast to 
 
 '''
 
+word = input("Enter a word") 
+number = input("Enter a number")
+int(number)
+word_length = len(word)
+print(word_length > number)
 
 
 
@@ -424,6 +440,10 @@ How will you count both uppercase and lowercase vowels?
 What string method can you use to count the number of vowels?
 
 '''
+user_string = input("Enter your word")
+user_string = user_string.strip()
+total_count = input().lower().count("a") + input().lower().count("e")+ input().lower().count("i")+ input().lower().count("o")+ input().lower().count("u")
+print(total_count)
 
 
 
