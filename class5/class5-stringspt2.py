@@ -16,13 +16,13 @@ Hint: You will have to use the len() function, string concatenation (+), and str
 
 '''
 
-userInput = input("Print your word or phrase")
-print(userInput)
+# userInput = input("Print your word or phrase")
+# print(userInput)
 
-top_and_bottom_border = userInput.len() * "*"
-print(top_and_bottom_border)
-print("*" + userInput + "*")
-print(top_and_bottom_border)
+# top_and_bottom_border = userInput.len() * "*"
+# print(top_and_bottom_border)
+# print("*" + userInput + "*")
+# print(top_and_bottom_border)
 
 
 
@@ -65,11 +65,11 @@ month = 'February'
 first_name = 'Alexandra'
 
 middle_of_string= len(first_name)/2
-first_name[middle_of_string]
+first_name[int(middle_of_string)]
 third_pos = middle_of_string-1
-print(first_name[third_pos])
+# print(first_name[third_pos])
 third_last_pos = (len(first_name)-3)
-print(first_name[third_last_pos])
+# print(first_name[third_last_pos])
 
 '''Reverse indexing'''
 fav_animal = 'Ostrich'
@@ -80,33 +80,41 @@ fav_animal = 'Ostrich'
 fav_season = 'spring'
 
 letter_g= fav_season[-1]
-print(fav_season[letter_g])
-middle_pos = fav_season/2
-print(fav_season[middle_pos])
+# print(fav_season[letter_g])
+middle_pos = len(fav_season)/2
+# print(fav_season[middle_pos])
 
 
 ''' Slicing '''
 # There are 3 parameters available with indexing with bracket notation [start:stop:step]
 fav_food = 'spaghetti'
 
-
+# print(fav_food[2])
 
 # Using slicing please create a string that accesses 'rica' in 'America'
 
 country = 'America'
+
+country = country[3:7]
+# print(country)
 
 
 
 # Using slicing please create a string that accesses 'ora' in 'Dora the explorer'
 cartoon = 'Dora the explorer'
 
+cartoon = cartoon[1:4]
+# print(cartoon)
 
 # Using slicing please create a string that accesses 'explo' in 'Dora the explorer'
 
+cartoon = cartoon[9:]
+print(cartoon)
 
 # Using slicing please create a string that accesses 'albo' in 'Rocky Balboa'
 boxer = 'Rocky Balboa'
 
+boxer = boxer[8:]
 
 
 # Let's step through this string 2 characters at a time

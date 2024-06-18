@@ -14,15 +14,28 @@ Test your code on a few inputs to make sure it works!
 
 # Get input 
 
-email = input("Hello, please enter your email")
+email = input("Hello, please enter your email:")
 # Clean data
 email = email.strip()
 
-# Test 1: It has a "." at the third-to-last index
+# print(email)
 
-email[-3]
+# Test 1: It has a "." at the third-to-last index
+char_at_index = email[-4]
+period_found = char_at_index == "."
+# print(period_found)
+
+# if char_at_index == ".":
+#     print("true")
+# else:
+#     print("false")
 
 # Test 2: It has exactly one "@" symbol, at the fifth-to-last index or earlier
+
+test_2=  email[-6::-1]
+
+symbol_in_string = "@" in test_2 ## search for something in a string using in
+print(symbol_in_string)
 
 # Test 3: There is at least one character before the "@" symbol
 
