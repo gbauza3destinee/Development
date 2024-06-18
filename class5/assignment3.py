@@ -22,7 +22,7 @@ email = email.strip()
 
 # Test 1: It has a "." at the third-to-last index
 char_at_index = email[-4]
-period_found = char_at_index == "."
+test_1 = char_at_index == "."
 # print(period_found)
 
 # if char_at_index == ".":
@@ -31,14 +31,20 @@ period_found = char_at_index == "."
 #     print("false")
 
 # Test 2: It has exactly one "@" symbol, at the fifth-to-last index or earlier
-
 test_2=  email[-6::-1]
 
 symbol_in_string = "@" in test_2 ## search for something in a string using in
-print(symbol_in_string)
+# print(symbol_in_string)
 
 # Test 3: There is at least one character before the "@" symbol
+test_3 = email.index("@") > 0
+# print(f"Test 3: If email has at least one char before @: {test_3}")
 
 # Test 4: It doesn’t have any spaces (doesn’t contain " ")
+test_4 = " " not in email
+# print(f"Test 4: If email doesn't have any spaces: {test_4}")
 
 # Final Test with AND Keyword
+
+all_tests = test_1 and test_2 and test_3 and test_4
+print(f"Is {email} true?", all_tests)
