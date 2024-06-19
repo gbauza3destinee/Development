@@ -214,3 +214,22 @@ racecar: True
 cat: False
 '''
 
+
+
+"""
+Write some code to print the second half of a string
+Example: 
+python 
+hon 
+"""
+
+word = "python" 
+half = len(word)/2
+size = len(word)
+print(half)
+half_word = word[int(half):size]
+print(type(half_word))
+
+print(half_word)
+
+
