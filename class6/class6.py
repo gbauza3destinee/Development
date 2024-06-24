@@ -2,10 +2,18 @@
 
 # Let's write a simple conditional that compares 2 values
 
+x= 25
+y = 20 
+
+# if( x > y):
+#     print(y)
 
 # Let's try a simple example with strings
 
+fname = 'Marty'
 
+# if fname == 'Marty':
+#     print("Hello, Mr.Mcfly")
 
 ''' Your turn! :)
 Write a program that asks you what the temperature is. 
@@ -13,6 +21,11 @@ If it is over 60 degrees, the program will give the user
  a print statement saying, 'It's looking like a warm one 
  today' What potential errors may we be expecting and how can we deal with it..
 '''
+temperature = input("What temperature is it?")
+
+temperature = int(temperature)
+# if( temperature > 60):
+#     print("It's looking like a warm one today")
 
 
 '''
@@ -27,11 +40,16 @@ Let's work through some possible steps to solve this
 
 Step 1 Get User's Input
 
+
+
 Step 2 Evaluate Data and Deliver output via Conditional
  The question is this, how can we figure out if the value is even or odd? Also, looks like we will be working with numbers. Input will always deliver a string, sounds like a job for integer casting!
 
 '''
 
+# number = input("Enter a number")
+# if (number %2 != 0):
+#     print("This is odd")
 
 '''
 Elif
