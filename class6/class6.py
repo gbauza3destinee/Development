@@ -21,9 +21,8 @@ If it is over 60 degrees, the program will give the user
  a print statement saying, 'It's looking like a warm one 
  today' What potential errors may we be expecting and how can we deal with it..
 '''
-temperature = input("What temperature is it?")
-
-temperature = int(temperature)
+# temperature = input("What temperature is it?")
+# temperature = int(temperature)
 # if( temperature > 60):
 #     print("It's looking like a warm one today")
 
@@ -48,8 +47,13 @@ Step 2 Evaluate Data and Deliver output via Conditional
 '''
 
 # number = input("Enter a number")
-# if (number %2 != 0):
-#     print("This is odd")
+# number = float(number)
+# if number %2 == 1:
+#     print(f"{number} is odd")
+# elif number %2 ==0:
+#     print(f"{number} is even")
+# else:
+#     print("Unknown")
 
 '''
 Elif
@@ -62,6 +66,7 @@ This is even
 
 
 '''
+
 
 
 
@@ -97,7 +102,11 @@ This is something else
 
 '''
 
-
+isDigit = input("Enter any character or number")
+if isDigit.isdigit()== True:
+    print("It's a Digit!")
+elif isDigit.isdigit() == False:
+    print("It's a Character!")
 
 ''' Chaining Conditionals code results'''
 
@@ -162,14 +171,19 @@ Anything that isn’t empty, 0, None, or False, is considered True.
 
 
 '''
-You’re working on a project to develop a login system for a website. The website requires the user to enter a username and password to log in. Write a Python program that checks whether the user entered the correct username and password.
+You’re working on a project to develop a login system for a website. 
+The website requires the user to enter a username and password to log in.
+Write a Python program that checks whether the user entered the correct username and password.
 Create two variables called username and password and set them to any valid string values.
 Prompt the user to enter their username and password using the input() function.
 Use conditionals and logical operators to check whether the username and password entered by the user match the username and password variables.
-If they match, print “Login successful.” If they don’t, print “Incorrect username or password.”
+If they match, print “Loga
+in successful.” If they don’t, print “Incorrect username or password.”
 
 Follow the requirements, nothing more, nothing less. 
 '''
+
+
 
 # Initialize system values
 
