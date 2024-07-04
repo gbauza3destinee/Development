@@ -212,25 +212,27 @@ but it contains multiple of the number 2.
 
 '''
 
-removing_values = [1, 2, 3, 2, 2, 3, 4, 5, 6, 2, 2, 2, 2, 2, 1, 1, 5, 6, 5]
+# removing_values1 = [1, 2, 3, 2, 2, 3, 4, 5, 6, 2, 2, 2, 2, 2, 1, 1, 5, 6, 5]
 
 
-for n in removing_values : 
-    if n == 2:
-        removing_values.remove(2)
-    else : 
-        continue
+# for n in removing_values1: 
+#     if removing_values1.count(2) > 1:
+#         removing_values1.remove(2)
 
-
-print(removing_values)
+# print(removing_values1)
 
 
 '''
 
 Exercise: Removing All Duplicates
-You have a list storing important data for your company, but it contains some duplicate entries. Go through your list and remove all the duplicates. When you're done, each item should appear in the list exactly once.
-Hint: How would you expand our previous example, which removed duplicates of one value, to remove duplicates of all values?
-Hint 2: You might want to make a copy of the original list to use as reference. You may want to use more than one loop.
+You have a list storing important data for your company, 
+but it contains some duplicate entries. Go through your list and 
+remove all the duplicates. When you're done, each item should appear 
+in the list exactly once.
+Hint: How would you expand our previous example, which removed
+ duplicates of one value, to remove duplicates of all values?
+Hint 2: You might want to make a copy of the original list to 
+use as reference. You may want to use more than one loop.
 
 '''
 
@@ -238,6 +240,14 @@ Hint 2: You might want to make a copy of the original list to use as reference. 
 # original list
 states = ['alaska', 'alaska', 'alaska', 'alabama', 'alabama', 'new york', 'new york', 'new york']
 
+unique_states = list()
 
+# for state in states :
+#     if state not in unique_states:
+#         unique_states.append(state)
 
+# # print(unique_states)
+        
 
+states3 = list(set(states))
+print(states3)
