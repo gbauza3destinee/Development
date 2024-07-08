@@ -60,15 +60,17 @@ planets = ["mercury", "venus", "earth", "mars"]
 planets = ["mercury", "venus", "earth", "mars"]
 output = ''
 
-for i in range(len(planets)) : 
-    print(str(i) + " " + planets[i])
+# for i in range(len(planets)) : 
+#     print(str(i) + " " + planets[i])
 
 
 
 
 ''' Exercise
-You have a list of employees, and a list of job titles. Assume the lists are the same length and in the same order.
-Use one for loop to go through both lists and print the job title of each employee.
+You have a list of employees, and a list of job titles. 
+Assume the lists are the same length and in the same order.
+Use one for loop to go through both lists and print the 
+job title of each employee.
 For example, if these are your lists:
 employees = ['Bob', 'Cynthia', 'Abdul']
 job_titles = ['accountant', 'engineer', 'recruiter']
@@ -83,9 +85,34 @@ Abdul's job title is recruiter.
 employees = ['Bob', 'Cynthia', 'Abdul']
 job_titles = ['accountant', 'engineer', 'recruiter']
 
+# for i in range(len(employees)):
+#     print(employees[i]+ "'s job title is " + job_titles[i])
 
 
 '''
 Write some code that creates a range based on what the user enters. 
-Challenge: you can make a range with 1, 2, or 3 numbers. How would you allow the user to pick any of these options?
+Challenge: you can make a range with 1, 2, or 3 numbers. 
+How would you allow the user to pick any of these options?
 '''
+
+while True:
+ 
+ 
+    choice = input("Choose 1, 2, or 3 parameters for your range: ")
+ 
+ 
+    if choice == '1':
+        start_1 = int(input("How long is your range: "))
+        output_1 = range(start_1)
+        for o in output_1:
+            print(o, end=' ')
+        break
+ 
+    if choice == '2':
+        start_2 = int(input("How long is start value: "))
+        stop_2 = int(input('What is your stop value: '))
+        output_2 = range(start_2, stop_2)
+        for o in output_2:
+            print(o, end=' ')
+        break
+ 
