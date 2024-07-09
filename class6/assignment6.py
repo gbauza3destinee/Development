@@ -9,7 +9,7 @@ If they match, print “Login successful.” If they don’t, print “Incorrect
 
 Follow the requirements, nothing more, nothing less. 
 '''
-#User input values
+# Get user sign on values
 username = input("Enter a username: ")
 password = input("Enter a password: ")
 
@@ -20,8 +20,8 @@ hardcoded_pwd = 'password123'
 #Conditionals 
 if username == hardcoded_username and password == hardcoded_pwd:
     print("Correct username and password!")
-    print("Logged in!")
+    print("Log in successful!")
 elif username == hardcoded_username and password!= hardcoded_pwd:
-    print("Wrong password!")
+    print("Incorrect password!")
 else :
-    print("Wrong username or password!")
+    print("Incorrect username or password!")

@@ -102,11 +102,11 @@ This is something else
 
 '''
 
-isDigit = input("Enter any character or number")
-if isDigit.isdigit()== True:
-    print("It's a Digit!")
-elif isDigit.isdigit() == False:
-    print("It's a Character!")
+# isDigit = input("Enter any character or number")
+# if isDigit.isdigit()== True:
+#     print("It's a Digit!")
+# elif isDigit.isdigit() == False:
+#     print("It's a Character!")
 
 ''' Chaining Conditionals code results'''
 
@@ -142,13 +142,12 @@ elif isDigit.isdigit() == False:
 
 # Logical operators
 # and returns true if they are both true
-
-
+# print(True and True)
 # or returns true if either one of them is true
-
+# print(True or False)
 
 # not returns the opposite
-
+# print(not True)
 
 
 # Order of Operations
@@ -192,3 +191,17 @@ Follow the requirements, nothing more, nothing less.
 
 
 # Evaluate and Output (using conditionals, boolean operators, and logical operators)
+
+## Take a variable ‘age’ which is of positive value and check the following:
+# age = input("Enter your age")
+# if age < 10 :
+#     print("children")
+# elif age > 60:
+#     print("senior citizen")
+# elif age < 60 and age > 10:
+#     print("adult")
+## If the age is less than 10, print “Children”.
+ 
+## If the age is more than 60, print ‘senior citizen’
+ 
+## If it is between 10 and 60, print ‘adult’
