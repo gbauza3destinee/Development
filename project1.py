@@ -1,19 +1,4 @@
 
-
-
-
-''' A List to handle error messages '''
-errors = ["Invalid username", "Invalid password"]
-
-
-special_characters = "!?@#$^&,*_-"
-numbers = "0123456789"
-capitalized_letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-lowercase_letters = "abcdefghijklmnopqrstuvwxyz"
-space = " "
-is8chars = False
-
-
 ''' Initialize your variables 
 
 We will need 2 variables to capture the username and password. 
@@ -21,10 +6,11 @@ Another 2 variables to use as the system username and password
 to authenticate against when we register
 '''
 username = ""
-
 password = ""
-
-errors = ['!!!Please enter username in correct format!!!','!!!Please check password format!!!']
+special_characters = "!?@#$^&,*_-"
+numbers = "0123456789"
+''' A List to handle error messages '''
+errors = ['!!!Invalid Username!!!','!!!Invalid password format!!!']
 
 ''' Start your while loop '''
 
