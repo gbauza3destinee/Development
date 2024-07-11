@@ -10,7 +10,7 @@ password = ""
 special_characters = "!?@#$^&,*_-"
 numbers = "0123456789"
 ''' A List to handle error messages '''
-errors = ['!!!Invalid Username!!!','!!!Invalid password format!!!']
+errors = ['Invalid Username','Invalid password format']
 
 ''' Start your while loop '''
 
@@ -40,6 +40,8 @@ while len(username) <= 8 or len(password) <= 8:    ## Test if entry is 8 chars l
     ### Destine@ -- no number
     ### Destin45 -- no special char
     ### Des in4& -- contains space
+    ### Des3!    -- not 8 chars
+    ### Destin3! -- valid case
 
     ### Check if is upper, contains special chars and numbers
     if not username in special_characters or not username in numbers or not username[0].isupper():
@@ -49,10 +51,10 @@ while len(username) <= 8 or len(password) <= 8:    ## Test if entry is 8 chars l
 
     ## Check if length is 8 
     if not len(username) == 8:
-        print("Invalid - Length not 8")
+        print("Invalid - Username length not 8")
         errors[0]
     if not len(password) == 8:
-        print("Invalid - Length not 8")
+        print("Invalid - Password length not 8")
         errors[1]
 
     ## Check if contains spaces 
