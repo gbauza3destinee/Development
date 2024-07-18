@@ -124,8 +124,8 @@ dog = {
     "age": 7
 }
 
-dog.popitem()
-print(dog)
+age = dog.popitem()
+# print(age)
 
 # Get a list with each key-value pair with items
 dog = {
@@ -134,8 +134,9 @@ dog = {
     "age": 7
 }
 
-
-
+list1 = dog.items()
+# print(list1)
+    
 
 # we can loop through
 dog = {
@@ -144,6 +145,8 @@ dog = {
     "age": 7
 }
 
+# for k, v in dog.items(): 
+#     print(k, v) 
 
 
 # Update dictionary
@@ -153,10 +156,12 @@ dog = {
     "age": 7
 }
 
-
+dog.update({"temperament": "happy"}) ## let's you add in a KV entry or update current
+size = {"size" : "small"} ## also another way to add a KV entry
+# print(dog)
 
 # Update can also update current key value pairs, as well as adding
-
+dog.update({"size": "small"})
 
 
 # Dictionaries vs Lists
@@ -179,49 +184,67 @@ Out:
 
 list1 = ['one', 'two', 'three']
 list2 = [4, 10, 30]
-
-
+new_dict = {}
+ 
+for i in range(len(list1)):
+    new_dict.update({list1[i] :list2[i]})
+# print(new_dict)
 
 
 ''' Zip Solution
 
-When you use the zip() function in Python, it takes two or more data sets and "zips" them together. This returns an object containing pairs of items derived from the data sets. 
+When you use the zip() function in Python, 
+it takes two or more data sets and "zips" them together. 
+This returns an object containing pairs of items derived 
+from the data sets. 
 '''
 
 my_keys = ['one', 'two', 'three']
 my_values = [4, 10, 30]
 
-
-
+result = dict(zip(my_keys, my_values))
+# print(result)
 
 
 '''
 Exercise
 
-Write a dictionary that five countries and their languages Then have your code print the languages of each country one at a time.
+Write a dictionary with five countries and their languages 
+Then have your code print the languages of each country one at a time.
 Hint: Use the items() method
 
 
 '''
 
 languages = { 'USA': 'English', 'Mexico': 'Spanish', 'France': 'French', 'Portugal':'Portugese', 'Belgium':'Dutch' }
-    
+
+# for key, value in languages.items():
+#     print(f"Language is {key} of country {value}")
 
 
 
 # As datasets, we can use bracket notation
 
 choices = {"flavors":['strawberry', 'vanilla', 'orange'],
-           "sizes":['large', 'medium', 'small']}
+           "sizes":['large', 'medium', 'small'],
+           "region":['south america', 'central asia', 'united states']}
 
+# print(choices["flavors"][1])
+# print(choices["size"][2])
 
-
+import pandas as pd
 # Lets make a dataframe out of this
-
+choices_df = pd.DataFrame(choices)
+# print(choices_df)
 
 # Lets rename the columns
+rename_choices_dict = {"flavors": "column1",
+                       "sizes": "column2",
+                       "region" : "column3"}
 
-
+choices_df.rename(columns=rename_choices_dict, inplace = True)
+# print(choices_df)
+choices_df.to_csv('output.csv', index = False) ## output to csv file
 
 
 '''
@@ -239,15 +262,24 @@ Write some code that uses a dictionary to calculate the mode of a list.
 
 my_list_items = [1,2,4,1,3,4,1,1] # our list
 
-
+output = {}
+for m in my_list_items:
+    if m not in output:
+        output[m] = 1
+        # print(output)
+    else: 
+        output[m]+=1
+print(output)
 
 
 # What about the count method for Lists?? 
-
+for m in my_list_items :
+    output[m] = my_list_items.count(m)
 
 # from statistics import mode
-
-
+from statistics import mode
+result  = mode(my_list_items)
+print(result)
 
 '''
 Suppose you have a list of employee records that contain the following information for each employee: name, job title, salary. The records are stored as a list of dictionaries.
@@ -264,9 +296,53 @@ records = [{'name': 'Bob', 'title': 'manager', 'salary': 50000},
            {'name': 'David', 'title': 'developer', 'salary': 65000}]
 
 
+# our output dictionaries
+title_salary_dict = {} # capture our titles and salary totals
+title_count_dict = {} # capture title count
 
 
-# import pandas as pd
+for r in records:
+    # print(r) # each loop through will show us a dictionary
+    title = r['title']
+    salary = r['salary']
+    # print(title)
+    # print(salary)
+    if title not in title_salary_dict:
+        title_salary_dict[title] = salary
+        title_count_dict[title] = 1
+        # print(title_salary_dict)
+        # print(title_count_dict)
+    else:
+        title_salary_dict[title] += salary
+        title_count_dict[title] += 1
+        
+# print('all titles and sum of salaries', title_salary_dict)
+# print('titles and employee count', title_count_dict)
+
+result = {s:float(title_salary_dict[s])/title_count_dict[s] for s in title_salary_dict}
+# print(result)
+
+
+
+import pandas as pd
+
+records = [{'name': 'Bob', 'title': 'managers', 'salary': 50000},
+           {'name': 'Alice', 'title': 'intern', 'salary': 60000},
+           {'name': 'David', 'title': 'intern', 'salary': 65000},
+           {'name': 'Des', 'title': 'developer', 'salary': 165000},
+           {'name': 'Sarah', 'title': 'managers', 'salary': 165000}]
+
+df = pd.DataFrame.from_records(records) # building the dataframe from our list of dictionaries
+
+result = df.groupby('title')['salary'].mean()
+# print(result)
+
+# how we loop through a pandas dataframe
+for key, value in df.iterrows():
+    print(key, value)
+
+
+
 
 
 
