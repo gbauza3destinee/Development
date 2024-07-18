@@ -1,4 +1,8 @@
 ### Debugging:
+
+## make lists into variables
+
+
 ## My not in statements don't seem to be working
 ##  With the case "destin6*" which has nums and special chars
 ##  result is False: contains number False: contains char
@@ -25,15 +29,25 @@ to authenticate against when we register
 
 username = ""
 password = ""
-spaces = " "
-special_characters = "!?@#$^&,*_-"
-numbers = "0123456789"
-lowercase_letter = "abcdefghijklmnopqrstuvwxyz"
-uppercase_letter = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+
+user_has_lowercase = False
+user_has_numeric = False
+user_has_uppercase = False
+user_has_spaces = False
+
+pass_has_lowercase = False
+pass_has_numeric = False
+pass_has_uppercase = False
+pass_has_spaces = False
+
+
 ''' A List to handle error messages '''
 errors = ['Invalid Username format','Invalid password format']
 
 ''' Start your while loop '''
+
+
 
 while len(username) <= 8 or len(password) <= 8:    ## Test if entry is 8 chars long
     
@@ -58,21 +72,35 @@ while len(username) <= 8 or len(password) <= 8:    ## Test if entry is 8 chars l
     password = input("Enter a valid Password: ")
 
 
-    ### Check if username/password is upper, contains special chars and numbers
-    if not username in special_characters or not username in numbers or not username in uppercase_letter or not username in lowercase_letter:
-        print("Username does contain number" , username in numbers)
-        print("Username does contain special chars" , username in special_characters)
-        print("Username does have letter as upper char" , username in uppercase_letter)
-        print("Username does have letter as lower char", username in lowercase_letter)
-        print(errors[0])
-    if not password in special_characters or not password in numbers or not password in uppercase_letter or not password in lowercase_letter:
-        print("Password does contain number" , password in numbers)
-        print("Password does contain special chars" , password in special_characters)
-        print("Password does have letter as upper char" , password in uppercase_letter)
-        print("Password does have letter as lower char", password in lowercase_letter)
-       
-        print(errors[1])
+    ### Check if username/password is upper, contains special chars, spaces and numbers
 
+    for char in username:
+        if char.isupper():
+            user_has_uppercase = True
+        elif char.islower():
+            user_has_lowercase = True
+        elif char.isnumeric():
+            print("Username does contain number" , char.isnumeric())
+            user_has_numeric = True
+        elif not char.isalnum():
+            print("Username does contain special chars", not char.isalnum())
+            user_has_special_char = True
+
+    for char in password:
+        if char.isupper():
+            pass_has_uppercase = True
+        elif char.islower():
+            pass_has_lowercase = True
+        elif char.isnumeric():
+            print("Username does contain number" , char.isnumeric())
+            pass_has_numeric = True
+        elif not char.isalnum():
+            print("Username does contain special chars", not char.isalnum())
+            pass_has_special_char = True
+        elif not char == " ":
+            print("Does not contain spaces")
+            pass_has_spaces = True
+    
     ## Check if username or password contains a length of 8 
     if not len(username) == 8:
         print("Invalid - Username length not 8")
@@ -80,9 +108,19 @@ while len(username) <= 8 or len(password) <= 8:    ## Test if entry is 8 chars l
     if not len(password) == 8:
         print("Invalid - Password length not 8")
         errors[1]
-    ## Check if username or password contains  spaces
-    if username in spaces or password in spaces:
-       print("Cannot contain spaces")
+   
+
+    ### HAPPYCASE:
+
+
+    if user_has_lowercase == True and user_has_numeric == True and user_has_uppercase == True and user_has_spaces == True and pass_has_lowercase == True and pass_has_numeric == True and pass_has_uppercase and pass_has_special_char == True:
+        print("Username is valid!")
+
+
+    # go through loop again to set up password 
+    ## I need to then set them as the system password/username
+    ## Extra for loop that checks if they're equal
+
 
     ''' If we pass, congratulate the user and immediately ask them to register'''
     if username in uppercase_letter and username in lowercase_letter and username in special_characters and len(username) == 8 and username not in spaces:
