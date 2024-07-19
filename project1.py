@@ -19,9 +19,9 @@ to authenticate against when we register
 
 """  Test cases 
     ### destin6* -- no upper
-    ### Destine@ -- no number
-    ### Destin45 -- no special char
-    ### Des in4& -- contains space
+    ### destine@ -- no number
+    ### destin45 -- no special char
+    ### des in4& -- contains space
     ### Des3!    -- not 8 chars
     ### dEStin3! || deStin3! dEstin3!-- valid cases
     ### Supper --- no number or alpha
@@ -134,7 +134,10 @@ while len(username) <= 8 or len(password) <= 8:    ## Test if entry is 8 chars l
      deStin3!
 
     """
-    sys_username = " "
+    ## Reassign username and password to other variables 
+
+    sys_username = ""
+    sys_password = ""
 
     ## Verify a valid username 
     ## split into two because logic failed when strung into one
@@ -146,39 +149,23 @@ while len(username) <= 8 or len(password) <= 8:    ## Test if entry is 8 chars l
             print("Congratulations, all conditions were met")
             sys_username = username
             
-
+    ## Verify a valid password 
     if pass_has_special_chars == True and pass_has_lowercase == True and pass_has_uppercase == True:
         print("hello the password has all criteria met")
     
         if pass_has_no_spaces == True and pass_has_special_chars == True and pass_has_length == True:
             print("Congratulations, all conditions were met")
-            sys_username = username
+            sys_password = password
             
 
-if sys_username == username and sys_password == password :
-    print("Welcome to the system, " + sys_username)
-    
-''' If we pass, congratulate the user and immediately ask them to register'''
+    ''' If we pass, congratulate the user and immediately ask them to register'''
 
-''' If they input the correct matching info, program complete. If incorrect, 
-        send the user all the way back to the beginning of the loop to start from scratch. '''
-
-
-# Problem: How are we handling login process after successful sign up?
-# Solution: With the assumption that after testing, the username and password
-#  fulfill requirements, we can reassign these values to more descriptive
-# variables that are meant for the sign in and do a final test with a simple if 
-# else. Ternary operators are off the table as they cannot be used in a conditional 
-# expression.
-# Test, push code, test push code, test push code :)
-
-
-
-
-
-    # go through loop again to set up password 
-    ## I need to then set them as the system password/username
-    ## Extra for loop that checks if they're equal
+    if sys_username == username and sys_password == password :
+        print("Congratulations, welcome to the system, " + sys_username)
+        break
+    else: 
+        continue
+    ''' If incorrect, send the user all the way back to the beginning of the loop to start from scratch. '''
 
 
 
@@ -187,16 +174,4 @@ if sys_username == username and sys_password == password :
 
 
 
-
-
-
-# Problem: How are we testing password requirements?
-# Solution(s): At least 8 characters long
-#   Contains at least one uppercase letter
-#   Contains at least one lowercase letter
-#   Contains at least one digit
-#   Contains at least one of these characters: !, ?, @, #, $, ^, &, *, _, -
-#   Doesn’t contain any spaces
-#   -String methods? Regular Expression? Both are acceptable solutions. Regex is more advanced and will save you a few lines of code
-# Test, push code, test push code, test push code :)
 
