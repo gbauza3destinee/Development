@@ -23,7 +23,7 @@ to authenticate against when we register
     ### Destin45 -- no special char
     ### Des in4& -- contains space
     ### Des3!    -- not 8 chars
-    ### destin3! -- valid case
+    ### dEStin3! || deStin3! dEstin3!-- valid cases
     ### Supper --- no number or alpha
 
 """ 
@@ -65,12 +65,13 @@ while len(username) <= 8 or len(password) <= 8:    ## Test if entry is 8 chars l
     # print(" - one special character")
     # print(" - one number") 
     # print(" - an uppercase first letter") 
+    # print(" - a lowercase first letter")
     # print(" - a length of 8 characters")
     # print(" - no spaces inside of it")
     print( " ")
 
     
-    ## Get your username and password
+    ## Get user input - username and password
     username = input("Enter a valid Username: ")
     print("---------------------------------")
     password = input("Enter a valid Password: ")
@@ -80,31 +81,29 @@ while len(username) <= 8 or len(password) <= 8:    ## Test if entry is 8 chars l
     
     ## Username must start with a lowercase letter and only contain 
     # letters, numbers, and underscores.
-
-    
     
     ''' Test your username and enforce logic'''
-    # for char in username:
-    #     if char.isupper():
-    #         print("HAS UPPER")
-    #         user_has_uppercase = True
-    #     if username[0].islower():
-    #         print("LOWER FIRST letter")
-    #         user_has_lowercase = True
-    #     if char.isnumeric():
-    #         user_has_numeric = True
-    #         print("HAS NUMERIC")
-    #     if not char.isalpha():
-    #         user_has_special_chars = True
-    #         print("SPECIAL CHars")
-    #     if not char == " ":
-    #         user_has_no_spaces = True
-    #         print("not a space")
-    #     if len(username) == 8:
-    #         user_has_length = True
-    #         print("8 chars")
-    #     else:
-    #         print(errors[0])
+    for char in username:
+        if char.isupper():
+            print("HAS UPPER")
+            user_has_uppercase = True
+        if username[0].islower():
+            print("LOWER FIRST letter")
+            user_has_lowercase = True
+        if char.isnumeric():
+            user_has_numeric = True
+            print("HAS NUMERIC")
+        if not char.isalpha():
+            user_has_special_chars = True
+            print("SPECIAL CHars")
+        if not char == " ":
+            user_has_no_spaces = True
+            print("not a space")
+        if len(username) == 8:
+            user_has_length = True
+            print("8 chars")
+        else:
+            print(errors[0])
 
     for char in password:
         if char.isupper():
@@ -128,9 +127,37 @@ while len(username) <= 8 or len(password) <= 8:    ## Test if entry is 8 chars l
         else:
             print(errors[1])
 
-    
-    
+    """
 
+
+     dEStin3!
+     deStin3!
+
+    """
+    sys_username = " "
+
+    ## Verify a valid username 
+    ## split into two because logic failed when strung into one
+    
+    if user_has_special_chars == True and user_has_lowercase == True and user_has_uppercase == True:
+        print("hello the username has all criteria met")
+    
+        if user_has_no_spaces == True and user_has_special_chars == True and user_has_length == True:
+            print("Congratulations, all conditions were met")
+            sys_username = username
+            
+
+    if pass_has_special_chars == True and pass_has_lowercase == True and pass_has_uppercase == True:
+        print("hello the password has all criteria met")
+    
+        if pass_has_no_spaces == True and pass_has_special_chars == True and pass_has_length == True:
+            print("Congratulations, all conditions were met")
+            sys_username = username
+            
+
+if sys_username == username and sys_password == password :
+    print("Welcome to the system, " + sys_username)
+    
 ''' If we pass, congratulate the user and immediately ask them to register'''
 
 ''' If they input the correct matching info, program complete. If incorrect, 
@@ -145,13 +172,6 @@ while len(username) <= 8 or len(password) <= 8:    ## Test if entry is 8 chars l
 # expression.
 # Test, push code, test push code, test push code :)
 
-
-sys_username = ""
-
-if user_has_lowercase == True and user_has_numeric == True and user_has_uppercase == True and user_has_no_spaces == True and user_has_lowercase == True:
-    print("Username is valid!")
-    print("Congratulations")
-    sys_username = username
 
 
 
