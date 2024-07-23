@@ -128,7 +128,7 @@ while len(username) <= 8 or len(password) <= 8:    ## Test if entry is 8 chars l
             print(errors[1])
 
     """
-
+    Valid Cases: 
 
      dEStin3!
      deStin3!
@@ -143,15 +143,15 @@ while len(username) <= 8 or len(password) <= 8:    ## Test if entry is 8 chars l
     ## split into two because logic failed when strung into one
     
     if user_has_special_chars == True and user_has_lowercase == True and user_has_uppercase == True:
-        print("hello the username has all criteria met")
+        print("The username has half criteria met")
     
         if user_has_no_spaces == True and user_has_special_chars == True and user_has_length == True:
-            print("Congratulations, all conditions were met")
+            print("Congratulations, all username conditions were met")
             sys_username = username
             
     ## Verify a valid password 
     if pass_has_special_chars == True and pass_has_lowercase == True and pass_has_uppercase == True:
-        print("hello the password has all criteria met")
+        print("The password has half the criteria met")
     
         if pass_has_no_spaces == True and pass_has_special_chars == True and pass_has_length == True:
             print("Congratulations, all conditions were met")
