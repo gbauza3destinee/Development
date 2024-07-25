@@ -14,6 +14,22 @@ user_data = {"user_id": 400,
            "fname": "Fritz"}
 
 
+
+
+# Dictionary will capture the variables and data 
+pdf_variables = {} ## create a dictionary from scratch
+# Lets get the name and fav colors for our PDF! 
+
+first_name = input("What is your first name? ").title()
+fav_color = input("What is your favorite color? ").title()
+ 
+ ## add values to dictionary
+ 
+pdf_variables.update({"firstname": first_name, "fav_color":fav_color})
+ 
+print(pdf_variables)
+
+
 # Bracket notation - we can grab the value by referencing the key
 
 # print(user_data["fname"])

@@ -65,7 +65,7 @@ users = {
 
 # load into a dataframe
 df = pd.DataFrame(users)
-print(df)
+# print(df)
 # generate a csv in our current working directory
 df.to_csv("testing.csv", index = False)
 
@@ -79,8 +79,8 @@ from datetime import date
 
 today = date.today()
 
-print(f"This month is {today.month}")
-print(f"This day is {today.day}")
+# print(f"This month is {today.month}")
+# print(f"This day is {today.day}")
 
 
 
@@ -89,8 +89,10 @@ https://jsonplaceholder.typicode.com/
 
 This website provides free api testing. Lets leverage python's request module to see if we can do a get request against this data
 '''
+import requests 
 
-
+my_response = requests.get('https://jsonplaceholder.typicode.com/')
+# print(my_response.text)
 
 
 ''' Oooh Fun with Tkinter
@@ -139,25 +141,40 @@ Generate PDF for Dual Employment Signature
 '''
 
 # Generate pdf file in same directory as Python file
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 
 # Dictionary will capture the variables and data we want to have on the pretty pdf
-
+pdf_variables = {} ## create a dictionary from scratch
 # Lets get the name and fav colors for our PDF! 
 
+first_name = input("What is your first name? ").title()
+fav_color = input("What is your favorite color? ").title()
+ 
+ ## add values to dictionary
+ 
+pdf_variables.update({"firstname": first_name, "fav_color":fav_color})
+ 
+print(pdf_variables)
 
+pdf_template = '''
+<p style="text-align: center;"><strong> Hi, {{firstname}}, your favorite color is {{fav_color}}</strong></p>
+'''
 
-
-
-
+import os 
+from jinja2 import Template
+from pyhtml2pdf import converter
 
 # Formatted html for final output
 
-
+Func = open("name_and_color.html", "w")
+Func.write(final_pdf.render(pdf_variables))
 # To PDF
-
+path = os.path.abspath('name_and_color.html')
+converter.convert(f'file:///{path}', f'{first_name.lower()}.{fav_color.lower()}.pdf')
+ 
 # Cleanup
-
+os.remove("name_and_color.html")
 
 
 
