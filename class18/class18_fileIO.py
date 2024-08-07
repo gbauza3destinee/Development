@@ -146,13 +146,22 @@ How can we make sure that each animal is on a new line?
 
 animals = ['dog', 'cat', 'bird', 'sheep', 'giraffe', 'gorilla']
 
+# with open("animals.txt", "w") as file:
+#         file.writelines(animals)
 
+## print each word from file as stack
+
+# with open("animals.txt", "a+") as file:
+#         file.writelines([a + '\n' for a in animals])
 
 
 '''
 Exercise - Tracking employee data
 
-You work for a company that needs to keep track of employee data, such as name, age, and salary. Write a Python program that prompts the user to input data for each employee, and writes the data to a CSV file named "employee_data.csv".
+You work for a company that needs to keep track of employee data, such as 
+name, age, and salary. Write a Python program that prompts the user to 
+input data for each employee, and writes the data to a CSV file named 
+"employee_data.csv".
 The CSV file has the following columns: Name, Age, Salary
 Until the user inputs "quit", keep prompting the user for employee data, and write it to the CSV file.
 Remember to follow a CSV file format: Each line should be separated by commas and end in a newline.
@@ -162,13 +171,53 @@ Remember to follow a CSV file format: Each line should be separated by commas an
 ''' Lets solve some problems with Pandas '''
 
 # Create a dataframe out of the dictionary below and output a csv or excel file
-
-
+columns = ["Name", "Age", "Salary"]
  
 data = [{'area': 'new-hills', 'rainfall': 100, 'temperature': 20},
         {'area': 'cape-town',  'rainfall': 70, 'temperature': 25},
         {'area': 'mumbai',  'rainfall': 200,  'temperature': 39}]
  
 
+## a+ is append 
+with open("employee_data.csv", "w") as file:
+        for c in columns : 
+                file.write(c + " ,")
+                file.write("\n")
+        
+with open("employee_data.csv", "a+") as f:
+        writer = csv.writer(f)
+        while True: 
+                name = input("Enter your name")
+                if name == "quit":
+                        break
+                
+                writer.writerow([name,age,salary])
+                age = input("Enter your age")
+                if age == "quit":
+                        break
+                salary = input("Please enter your salary? ")
+                if salary == 'quit':
+                    break
+                writer.writerow([name, age, salary])
+        
+
+
+
+
+''' Create a dataframe from the above dictionary that does not 
+include rainfall and output a csv or excel file with a timedatestamp
+ on the filename'''
+## Pandas
+df = pd.DataFrame.from_dict(data)
+df.to_csv('output.csv', index=False)
 
 ''' Create a dataframe from the above dictionary that does not include rainfall and output a csv or excel file with a timedatestamp on the filename'''
+
+
+from datetime import datetime
+
+myts = datetime.today().strftime('%Y-%m-%d')
+
+new_df = df[['area', 'temperature']]
+
+new_df.to_csv(f'{myts}.csv', index=False)
