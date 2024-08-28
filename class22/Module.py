@@ -1,5 +1,7 @@
 from datetime import datetime
 import pandas as pd
+import os
+
 
 
 
@@ -12,15 +14,14 @@ Create an Employee class
  * accessor / mutator 
  * when writing the constructor specify the type 
 
- - Create your class in another file and run it from test
- Attributes
+ - Create your class in another file and run it from main
  - Use type hinting in constructor 
  
 """
 class Employee: 
 
-    ### current_year(int) - self.hire_year (int)
-    ### what do I use from with for dataframe 
+    ### Type math error : current_year(int) - self.hire_year (int)
+    ### Verify that csv file is printing in the correct format expected.
 
     ## FIELDS 
     # name: string​
@@ -87,8 +88,10 @@ class Employee:
     # and hire year to a text file named after the employee.
 
     def print_emp_information(self):
+        # os.chdir(os.path.dirname(os.path.abspath(__file__)))
         employee_dict = self.__dict__
-        df = pd.DataFrame.from_dict(employee_dict)
+        print(employee_dict)
+        df = pd.DataFrame.from_dict([employee_dict])
         df.to_csv('employees.csv', index=False)
 
 

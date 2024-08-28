@@ -7,11 +7,18 @@ emp = Employee("Sally", "Programmer Analyst","Tech","50000","05-03-2020")
 ## Print Accessor / Mutator methods                           --- Works 
 # print(emp.get_name())
 # print(emp.get_hire_year())
+# print(emp.get_department())
+# print(emp.get_salary())
+# print(emp.get_job_title())
 
 
 
-## Open CSV file with employee information  --- Faulty " raise ValueError("If using all scalar values, you must pass an index")"
+
+## Open CSV file with employee information  --- Faulty 
 emp.print_emp_information()
+### raise ValueError("If using all scalar values, you must pass an index")
+
+
 
 ## Calculate from int to int years worked  --- Faulty type error int to int
 # print(emp.years_worked())

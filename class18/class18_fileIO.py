@@ -112,8 +112,8 @@ sales_dict = {}
 ## Create a file to write values into the file
 
 sales_data = ['Jibbers,12/1/2023,11, 5.67\n', 'Jabbers,11/30/2023,14, 6.75\n', 'Willers,10/12/2023,10, 4.50\n', 'Wonkers,12/3/2023,12, 8.00\n']
-with open("new_sales_data.csv", "w") as data:
-        data.writelines(sales_data)
+# with open("new_sales_data.csv", "w") as data:
+#         data.writelines(sales_data)
 
 '''
 Exercise 
@@ -124,13 +124,13 @@ second line of the file.
 
 '''
 
-with open("user_info.txt", "w") as file:
-        name = input("enter your name")
-        age = input("enter your age")
-        color = input("enter your favorite color")
-        file.write(name + '\n')
-        file.write(age + '\n')
-        file.write(color)
+# with open("user_info.txt", "w") as file:
+#         name = input("enter your name")
+#         age = input("enter your age")
+#         color = input("enter your favorite color")
+#         file.write(name + '\n')
+#         file.write(age + '\n')
+#         file.write(color)
         
 
 
@@ -172,37 +172,37 @@ Remember to follow a CSV file format: Each line should be separated by commas an
 
 # Create a dataframe out of the dictionary below and output a csv or excel file
 columns = ["Name", "Age", "Salary"]
- 
+
+
+# ## a+ is append 
+# with open("employee_data.csv", "w") as file:
+#         for c in columns : 
+#                 file.write(c + " ,")
+#                 file.write("\n")
+        
+# with open("employee_data.csv", "a+") as f:
+#         writer = csv.writer(f)
+#         while True: 
+#                 name = input("Enter your name")
+#                 if name == "quit":
+#                         break
+                
+#                 writer.writerow([name,age,salary])
+#                 age = input("Enter your age")
+#                 if age == "quit":
+#                         break
+#                 salary = input("Please enter your salary? ")
+#                 if salary == 'quit':
+#                     break
+#                 writer.writerow([name, age, salary])
+        
+
+
+
 data = [{'area': 'new-hills', 'rainfall': 100, 'temperature': 20},
         {'area': 'cape-town',  'rainfall': 70, 'temperature': 25},
         {'area': 'mumbai',  'rainfall': 200,  'temperature': 39}]
  
-
-## a+ is append 
-with open("employee_data.csv", "w") as file:
-        for c in columns : 
-                file.write(c + " ,")
-                file.write("\n")
-        
-with open("employee_data.csv", "a+") as f:
-        writer = csv.writer(f)
-        while True: 
-                name = input("Enter your name")
-                if name == "quit":
-                        break
-                
-                writer.writerow([name,age,salary])
-                age = input("Enter your age")
-                if age == "quit":
-                        break
-                salary = input("Please enter your salary? ")
-                if salary == 'quit':
-                    break
-                writer.writerow([name, age, salary])
-        
-
-
-
 
 ''' Create a dataframe from the above dictionary that does not 
 include rainfall and output a csv or excel file with a timedatestamp
@@ -216,8 +216,8 @@ df.to_csv('output.csv', index=False)
 
 from datetime import datetime
 
-myts = datetime.today().strftime('%Y-%m-%d')
+# myts = datetime.today().strftime('%Y-%m-%d')
 
-new_df = df[['area', 'temperature']]
+# new_df = df[['area', 'temperature']]
 
-new_df.to_csv(f'{myts}.csv', index=False)
+# new_df.to_csv(f'{myts}.csv', index=False)
