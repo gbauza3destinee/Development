@@ -14,10 +14,8 @@ emp = Employee("Sally", "Programmer Analyst","Tech","50000","05-03-2020")
 
 
 
-## Open CSV file with employee information  --- Faulty 
+## Open CSV file with employee information  --- Working, check structure 
 emp.print_emp_information()
-### raise ValueError("If using all scalar values, you must pass an index")
-
 
 
 ## Calculate from int to int years worked  --- Faulty type error int to int

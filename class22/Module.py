@@ -20,7 +20,12 @@ Create an Employee class
 """
 class Employee: 
 
-    ### Type math error : current_year(int) - self.hire_year (int)
+    ### * Fix Type Cast of hire_year: 
+    #  I've typehinted hire year to be int but it's coming out as a string
+    #   current_year(int) - self.hire_year (int)
+    ### * Test total_expense method 
+    ### * Fix name of file printed out in printempinfo
+
     ### Verify that csv file is printing in the correct format expected.
 
     ## FIELDS 
@@ -30,7 +35,7 @@ class Employee:
     # salary: float​
     # hire_year: int or string​ 
 
-    def __init__(self, name:str, job_title:str, department:str, salary:int, hire_year:int):
+    def __init__(self, name:str, job_title:str, department:str, salary:float, hire_year:int):
         self.name = name
         self.job_title = job_title
         self.department = department
@@ -63,7 +68,7 @@ class Employee:
     def get_salary(self):
         return self.salary
     
-    def set_salary(self, salary: int):
+    def set_salary(self, salary: float):
         self.salary = salary
     
     def get_hire_year(self):
@@ -77,21 +82,25 @@ class Employee:
     ### Years Worked
     def years_worked(self):
         current_year = datetime.now().year
-        return current_year - self.hire_year
+        print(f"Current year type {type(current_year)}")
+        hire_year_converted = int(self.hire_year)
+        print(f"hire year type {type(self.hire_year)}")
+
+        # return current_year - self.hire_year
     
     ## Total Expense
     def total_expense(self, salary):
         years = self.years_worked(self.hire_year)
         return years * salary
     
-    ###### print employee name, job title, department, salary, 
-    # and hire year to a text file named after the employee.
-
+    ###### Print employee information to a text file
     def print_emp_information(self):
         # os.chdir(os.path.dirname(os.path.abspath(__file__)))
         employee_dict = self.__dict__
         print(employee_dict)
         df = pd.DataFrame.from_dict([employee_dict])
-        df.to_csv('employees.csv', index=False)
+        name = employee_dict["name"]
+        print(name)
+        df.to_csv('f{name}.csv', index=False)
 
 
