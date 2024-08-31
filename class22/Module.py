@@ -18,20 +18,14 @@ Create an Employee class
  - Use type hinting in constructor 
  
 """
+
+## Create a Class Employee
 class Employee: 
 
 
-    ### Verify that csv file is printing in the correct format expected.
+    """ Employees Class Doc String"""
 
-    ## FIELDS 
-    # name: string​
-    # job_title: string​
-    # department: string​
-    # salary: float​
-    # hire_year: int or string​ 
-
-    """ Employees Class """
-
+    ## Constructor with type hinting 
     def __init__(self, name:str, job_title:str, department:str, salary:float, hire_year:int):
         self.name = name
         self.job_title = job_title
@@ -90,10 +84,8 @@ class Employee:
     def print_emp_information(self):
         # os.chdir(os.path.dirname(os.path.abspath(__file__)))
         employee_dict = self.__dict__
-        print(employee_dict)
         df = pd.DataFrame.from_dict([employee_dict])
         name = employee_dict["name"]
-        print(name)
         df.to_csv(f'{name}.csv', index=False)
 
 

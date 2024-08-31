@@ -15,12 +15,11 @@ emp = Employee("Sally", "Programmer Analyst","Tech","50000", 2020)
 ## Open CSV file with employee information  --- Working, check structure 
 # emp.print_emp_information()
 
-
 ## Calculate from int to int years worked  --- Faulty type error int to int
 # print(emp.years_worked())
 
 ## Calculate total $ amount of years employee has worked  --- Test post Years worked
-print(emp.total_expense(5000))
+# print(emp.total_expense(5000))
 
 ## Print to String method                                    --- Works 
 # print(emp.__str__())
