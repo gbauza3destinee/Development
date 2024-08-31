@@ -20,11 +20,6 @@ Create an Employee class
 """
 class Employee: 
 
-    ### * Fix Type Cast of hire_year: 
-    #  I've typehinted hire year to be int but it's coming out as a string
-    #   current_year(int) - self.hire_year (int)
-    ### * Test total_expense method 
-    ### * Fix name of file printed out in printempinfo
 
     ### Verify that csv file is printing in the correct format expected.
 
@@ -34,6 +29,8 @@ class Employee:
     # department: string​
     # salary: float​
     # hire_year: int or string​ 
+
+    """ Employees Class """
 
     def __init__(self, name:str, job_title:str, department:str, salary:float, hire_year:int):
         self.name = name
@@ -82,15 +79,11 @@ class Employee:
     ### Years Worked
     def years_worked(self):
         current_year = datetime.now().year
-        print(f"Current year type {type(current_year)}")
-        hire_year_converted = int(self.hire_year)
-        print(f"hire year type {type(self.hire_year)}")
-
-        # return current_year - self.hire_year
+        return current_year - self.hire_year
     
     ## Total Expense
     def total_expense(self, salary):
-        years = self.years_worked(self.hire_year)
+        years = self.years_worked()
         return years * salary
     
     ###### Print employee information to a text file
@@ -101,6 +94,6 @@ class Employee:
         df = pd.DataFrame.from_dict([employee_dict])
         name = employee_dict["name"]
         print(name)
-        df.to_csv('f{name}.csv', index=False)
+        df.to_csv(f'{name}.csv', index=False)
 
 
